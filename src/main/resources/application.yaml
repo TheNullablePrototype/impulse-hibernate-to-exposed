@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: 'meetup'
+  datasource:
+    hikari:
+      data-source-properties:
+        rewriteBatchedInserts: true
+        ApplicationName: '${spring.application.name}'
+        assumeMinServerVersion: "10.0"
+  jpa:
+    properties:
+      hibernate:
+        jdbc.batch_size: 100
+        order_updates: true
+        order_inserts: true
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  jackson:
+    default-property-inclusion: non_empty
+  mvc:
+    problemdetails:
+      enabled: true
+
+# Какая реализация OrderRepository активна: jpa | exposed
+meetup:
+  persistence: jpa

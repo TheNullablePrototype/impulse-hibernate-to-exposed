@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/test'
+    username: 'test'
+    password: 'test'
+  flyway:
+    # db/demo - данные для живого показа, в тесты не попадают
+    locations: 'classpath:db/migration,classpath:db/demo'
+
+logging:
+  level:
+    ru.prototype.meetup: DEBUG
+    net.ttddyy.dsproxy: WARN
